@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="logo-center" style="margin-bottom: 24px;">
+        <a href="index.html" class="logo">
+            <img src="assets/images/pics/vibestationary-logo.svg" alt="VibeStationery" width="220">
+        </a>
+    </div>
+    <main>
+        <section class="section login-section">
+            <div class="container login-container">
+                <div class="login-card">
+                    <h2 class="h2 section-title">Checkout</h2>
+                    <form class="login-form" id="checkout-form">
+                        <input type="text" name="name" id="name" placeholder="Enter Name" required class="input-field">
+                        <input type="email" name="email" id="email" placeholder="Enter Email" required class="input-field">
+                        <textarea name="address" id="address" placeholder="Enter Delivery Address" required class="input-field" style="min-height:80px;"></textarea>
+                        <select name="payment" id="payment" class="input-field" style="margin-bottom:12px;">
+                            <option value="" disabled selected>Select Payment Method</option>
+                            <option value="cod">Cash on Delivery</option>
+                            <option value="card">Credit/Debit Card</option>
+                            <option value="upi">UPI</option>
+                        </select>
+                        <button type="submit" class="btn">Place Order</button>
+                        <div class="form-message" id="form-message"></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="./assets/js/checkout.js"></script>
+</body>
+</html>

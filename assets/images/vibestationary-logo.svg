@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100" width="400" height="100">
+  <!-- Background wave effect -->
+  <path d="M0 50 Q100 20 200 50 T400 50" fill="none" stroke="#6366f1" stroke-width="2" opacity="0.3">
+    <animate attributeName="d" dur="4s" repeatCount="indefinite"
+      values="M0 50 Q100 20 200 50 T400 50;
+              M0 50 Q100 80 200 50 T400 50;
+              M0 50 Q100 20 200 50 T400 50"/>
+  </path>
+  
+  <!-- Pencil icon -->
+  <path d="M320 30l10 10-30 30-10-10z M290 70l10 10" fill="#4f46e5" stroke="#4f46e5" stroke-width="2"/>
+  
+  <!-- Text elements -->
+  <text x="50" y="60" font-family="Arial, sans-serif" font-weight="bold" font-size="40" fill="#1e1b4b">
+    <tspan>Vibe</tspan>
+    <tspan x="170" fill="#4f46e5">Stationary</tspan>
+  </text>
+  
+  <!-- Decorative dots -->
+  <circle cx="150" cy="30" r="4" fill="#6366f1"/>
+  <circle cx="280" cy="70" r="4" fill="#6366f1"/>
+  
+  <!-- Animated underline -->
+  <line x1="50" y1="70" x2="300" y2="70" stroke="#6366f1" stroke-width="2" stroke-dasharray="5,5">
+    <animate attributeName="stroke-dashoffset" from="10" to="0" dur="1s" repeatCount="indefinite"/>
+  </line>
+</svg>

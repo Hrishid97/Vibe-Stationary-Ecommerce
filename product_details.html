@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="logo-center">
+    <a href="index.html" class="logo">
+      <img src="assets/images/pics/vibestationary-logo.svg" alt="Logo" width="220">
+    </a>
+  </div>
+  <main>
+    <section class="details-section" id="details-section">
+      <!-- Product details will be rendered here -->
+    </section>
+  </main>
+  <script>
+    // Get product data from query params
+    function getQueryParams() {
+      const params = {};
+      window.location.search.replace(/\??(?:([^=]+)=([^&]*)&?)/g, function(_, key, value) {
+        params[decodeURIComponent(key)] = decodeURIComponent(value);
+      });
+      return params;
+    }
+    const params = getQueryParams();
+    // Render product details
+    function renderDetails() {
+      const section = document.getElementById('details-section');
+      if (!section) return;
+      // Fallbacks
+      const img = params.img || 'assets/images/logo.svg';
+      const title = (params.title || 'Product Name').replace(/\+/g, ' ');
+      const price = (params.price || 'N/A').replace(/\+/g, ' ');
+      const desc = (params.desc || 'No description available.').replace(/\+/g, ' ');
+      section.innerHTML = `
+        <img src="${img}" alt="${title}" class="details-img">
+        <div class="details-content">
+          <div class="details-title">${title}</div>
+          <div class="details-price">Price: ${price}</div>
+          <div class="details-desc">${desc}</div>
+          <div class="details-actions">
+            <button class="btn-buy">Buy Now</button>
+            <button class="btn-wishlist">Add to Wishlist</button>
+          </div>
+        </div>
+      `;
+      // Buy button
+      section.querySelector('.btn-buy').onclick = function() {
+        // Add to cart
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        cart.push(title);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        window.location.href = 'checkout.html';
+      };
+      // Wishlist button
+      section.querySelector('.btn-wishlist').onclick = function() {
+        let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+        wishlist.push(title);
+        localStorage.setItem('wishlist', JSON.stringify(wishlist));
+        alert('Added to wishlist!');
+      };
+    }
+    renderDetails();
+  </script>
+</body>
+</html>

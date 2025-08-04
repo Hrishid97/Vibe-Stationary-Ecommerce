@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="logo-center" style="margin-bottom: 24px;">
+        <a href="index.html" class="logo">
+            <img src="assets/images/vibestationary-logo.svg" alt="Logo" width="220">
+        </a>
+    </div>
+    <main>
+        <section class="section login-section">
+            <div class="container login-container">
+                <div class="login-card">
+                    <h2 class="h2 section-title">Login</h2>
+                    <form class="login-form" id="login-form">
+                        <input type="text" name="username" id="username" placeholder="Enter Username" required class="input-field">
+                        <input type="password" name="password" id="password" placeholder="Enter Password" required class="input-field">
+                        <button type="submit" class="btn">Login</button>
+                        <div class="form-message" id="form-message"></div>
+                    </form>
+                    <p class="register-link">Don't have an account? <a href="register.html">Register</a></p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="./assets/js/login.js"></script>
+</body>
+</html>
